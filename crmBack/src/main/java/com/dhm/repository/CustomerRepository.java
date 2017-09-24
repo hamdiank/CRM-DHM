@@ -6,4 +6,5 @@ import com.dhm.entities.Customer;
 
 public interface CustomerRepository extends MongoRepository<Customer, String>{
 
+	Customer findByUserName(String userName);
 }
