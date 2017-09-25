@@ -1,34 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
-
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import {LoginComponent} from "./login/login.component";
-import {DashboardComponent} from "./dashboard/dashboard.component";
-import {HeaderComponent} from "./shared/header/header.component";
-import {FooterComponent} from "./shared/footer/footer.component";
-import {SidebarComponent} from "./shared/sidebar/sidebar.component";
-import {LocationStrategy, HashLocationStrategy} from "@angular/common";
-import {RouterModule} from "@angular/router";
-import {AppRoute} from "./app-route";
+import {routes} from "./app-route-module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    DashboardComponent,
-    HeaderComponent,
-    FooterComponent,
-    SidebarComponent,
 
   ],
   imports: [
     BrowserModule,
-    MDBBootstrapModule.forRoot(),
-    RouterModule.forRoot(AppRoute)
+    NgbModule.forRoot(),
+    FormsModule,
+    HttpModule,
+    RouterModule.forRoot(routes)
   ],
-  schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

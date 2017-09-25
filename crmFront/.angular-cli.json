@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "crm-front"
+    "name": "material-angularcli"
   },
   "apps": [
     {
@@ -19,10 +19,18 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-
-        "./styles.css"
+       
       ],
       "scripts": [
+          "../src/assets/plugins/jquery/jquery.min.js",
+          "../src/assets/plugins/bootstrap/js/popper.min.js",
+          "../src/assets/plugins/bootstrap/js/bootstrap.min.js",
+          "../src/assets/js/jquery.slimscroll.js",
+          "../src/assets/js/sidebarmenu.js",
+          "../src/assets/plugins/sparkline/jquery.sparkline.min.js",
+          "../src/assets/js/custom.js",
+          "../src/assets/js/pace.min.js",
+          "../src/assets/plugins/styleswitcher/jQuery.style.switcher.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -38,16 +46,13 @@
   },
   "lint": [
     {
-      "project": "src/tsconfig.app.json",
-      "exclude": "**/node_modules/**"
+      "project": "src/tsconfig.app.json"
     },
     {
-      "project": "src/tsconfig.spec.json",
-      "exclude": "**/node_modules/**"
+      "project": "src/tsconfig.spec.json"
     },
     {
-      "project": "e2e/tsconfig.e2e.json",
-      "exclude": "**/node_modules/**"
+      "project": "e2e/tsconfig.e2e.json"
     }
   ],
   "test": {
@@ -56,7 +61,7 @@
     }
   },
   "defaults": {
-    "styleExt": "scss",
+    "styleExt": "css",
     "component": {}
   }
 }
